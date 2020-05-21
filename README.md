@@ -27,6 +27,7 @@ npx knex (command)
 - Knex.js
 - JWT
 - CORS
+- Morgan
 - Nodemon
 ```
 
