@@ -4,7 +4,9 @@
   "description": "A Express + Knex bolierplate for API building",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "init": "knex init",
     "dev": "nodemon src/index.js"
   },
   "repository": {
