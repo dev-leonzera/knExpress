@@ -6,7 +6,7 @@ A Express boilerplate for fast API development, powered with Knex.js
 
 ## Preparation
 ```bash
-#Install Knex package globally:
+#Install Knex cli:
 
 npm i -g knex
 
@@ -60,9 +60,9 @@ or
 
 npx knex init
 
-This will generate a knexfile, where you must configurate with your database infos, and the directories path for migrations and seeds.
+--This will generate a knexfile, where you must configurate with your database infos, and the directories path for migrations and seeds.
 
-For more information, check out the Knex.js docs (http://knexjs.org/)
+--For more information, check out the Knex.js docs (http://knexjs.org/)
 
 #Run Migrations
 
