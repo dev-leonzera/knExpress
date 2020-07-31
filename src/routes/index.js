@@ -1,9 +1,15 @@
-const express = require('express');
+const { Router } = require('express');
 
-const routes = express.Router();
+const routes = Router();
 
 routes.get('/', (req, res) => {
-    res.send("Bem vindo");
+    res.status(200).json({
+        error: false,
+        message: 'Bem vindo à selva'
+    })
 });
+
+require('./routes/auth')(routes)
+require('./routes/profile')(routes)
 
 module.exports = routes;

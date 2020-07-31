@@ -4,32 +4,43 @@
   "description": "A Express + Knex bolierplate for API building",
   "main": "index.js",
   "scripts": {
-    "migrate": "knex migrate:latest",
-    "seed": "knex seed:run",
-    "init": "knex init",
-    "dev": "nodemon src/index.js"
+    "db:init": "knex init",
+    "db:migrate-create": "knex migrate:make",
+    "db:migrate": "knex migrate:latest",
+    "db:refresh": "knex migrate:rollback --all; knex migrate:latest",
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "test": "cross-env NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dev-leonzera/Knexpress-bolierplate.git"
+    "url": "git+https://github.com/dev-leonzera/knExpress.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Leonardo 'Leonzera' Andrade",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dev-leonzera/Knexpress-bolierplate/issues"
+    "url": "https://github.com/dev-leonzera/knExpress.git/issues"
   },
-  "homepage": "https://github.com/dev-leonzera/Knexpress-bolierplate#readme",
+  "homepage": "https://github.com/dev-leonzera/knExpress.git#readme",
   "dependencies": {
-    "express": "4.17.1",
-    "pg": "8.2.1",
-    "mysql2": "2.1.0",
-    "knex": "0.21.1",
+    "bcrypt": "5.0.0",
+    "celebrate": "12.1.2",
     "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
     "jsonwebtoken": "8.5.1",
-    "morgan": "1.10.0"
+    "knex": "0.21.1",
+    "morgan": "1.10.0",
+    "mysql2": "2.1.0",
+    "objection": "2.2.1",
+    "pg": "8.2.1",
+    "sqlite3": "^5.0.0",
+    "cross-env": "7.0.2"
   },
   "devDependencies": {
-    "nodemon": "2.0.4"
+    "nodemon": "2.0.4",
+    "supertest": "^4.0.2",
+    "jest": "26.1.0"
   }
 }
